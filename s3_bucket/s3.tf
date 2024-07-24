@@ -15,6 +15,12 @@ resource "aws_s3_bucket" "s3_bucket" {
 
 }
 
+resource "aws_s3_bucket_object" "hello_file" {
+  bucket = aws_s3_bucket.s3_bucket.id
+  key = "hello.txt"
+  source = "D:\-- TUTORIALS --\Terraform\s3_bucket\hello.txt"
+}
+
 /* bucket - (Optional, Forces new resource) Name of the bucket. 
 If omitted, Terraform will assign a random, unique name. 
 Must be lowercase and less than or equal to 63 characters in length. 
