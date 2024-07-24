@@ -5,6 +5,10 @@ provider "aws" {
 resource "aws_s3_bucket" "s3_bucket" {
   bucket = "my-tf-demo-bucket"
 
+  versioning {
+    enabled = "true"
+  }
+
   tags = {
     Name = "My Demo Bucket"
   }
